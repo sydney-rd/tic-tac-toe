@@ -38,12 +38,15 @@ h1 {
     opacity: .9;
 }
 
-.restartBtn {
+button {
     color: white;
     text-align: center;
-    margin-left: 45.8%;
-    font-size: 20px;
+    margin-left: 45.9%;
+    font-size: 18px;
     font-family: comic sans MS;
     background-color: black;
+    border: 1px dotted;
+    padding: 8px;
+    box-shadow: 1;
 
 }

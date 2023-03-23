@@ -1,6 +1,7 @@
 const restartBtn = document.querySelector(".restartBtn");
 let boxes = document.querySelectorAll(".boxes"); // this gives back an array
 let player1Turn = true; // allows us to keep track of whose turn is who
+// game state
 
 const winningCombinations = [
     [0, 1, 2],
@@ -17,43 +18,37 @@ const winningCombinations = [
 const p1Array = [];
 const p2Array = [];
     
+// create a game function that compares p array to winning combos
+function game() {
+
+game();
+
+// allows clicked boxes to change colors back and forth
+boxes.forEach((box) => {
+    box.addEventListener("click", (e) => {
+        if (player1Turn) {
+            e.target.classList.add("player1");
+            p1Array.push(box) // only get the num from the box
+            player1Turn = false;
+        } else {
+            e.target.classList.add("player2");
+            player1Turn = true;
+            p2Array.push(box);
+        }
+    });
+});
+
 // reset game function
 function resetGame() {
     boxes.forEach(box => {
-        console.log(box)
         box.classList.value = "boxes"; // resets value of box to boxes (to re-set colors)
-        console.log(box)
         p1Array.length = 0;
         p2Array.length = 0;
         player1Turn = true;
     });
 }
 
+// event listener to call resetGame function
 restartBtn.addEventListener("click", () => {
     resetGame();
 })
-
-
-// function game() {
-
-//     // run for loop to compare array and winning combo 
-//     // compare during players turn
-        
-//     }
-
-boxes.forEach((box) => {
-    box.addEventListener("click", (e) => {
-        if (player1Turn) {
-            e.target.classList.add("player1");
-            p1Array.push(box) // only get the num from the box
-            console.log(e.target.id); // removr
-            player1Turn = false;
-        } else {
-            e.target.classList.add("player2");
-            player1Turn = true;
-            p2Array.push(box);
-            console.log(e.target.id); // remove
-
-        }
-    });
-});
