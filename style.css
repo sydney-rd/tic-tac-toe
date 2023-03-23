@@ -1,0 +1,49 @@
+
+body {
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5a2613f6be42d61192e3e478/1582999868688-PEVK3HU4FN1D9V5UDM4K/Screen+Shot+2020-02-29+at+1.07.46+PM.png?format=1000w");
+    background-repeat: repeat;
+}
+
+.grid {
+    display: grid;
+    position: relative;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+    height: 500px;
+    justify-content: center;
+    align-content: center;
+    padding-top: 20px;
+}
+
+.boxes{
+    width: 150px;
+    height: 150px;
+    border: 3px solid black;
+}
+
+h1 {
+    text-align: center;
+    font-family: comic sans MS;
+    color: black;
+    padding-top: 20px;
+}
+
+.player1 {
+    background-color: black;
+    opacity: .7;
+}
+
+.player2 {
+    background-color: lightgray;
+    opacity: .9;
+}
+
+button {
+    color: white;
+    text-align: center;
+    margin-left: 45.8%;
+    font-size: 20px;
+    font-family: comic sans MS;
+    background-color: black;
+
+}
