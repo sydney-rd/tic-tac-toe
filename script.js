@@ -1,3 +1,7 @@
+const restartBtn = document.querySelector(".restartBtn");
+let boxes = document.querySelectorAll(".boxes"); // this gives back an array
+let player1Turn = true; // allows us to keep track of whose turn is who
+
 const winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -12,33 +16,30 @@ const winningCombinations = [
 // win functions uses winningCombintations array
 const p1Array = [];
 const p2Array = [];
+    
+// reset game function
+function resetGame() {
+    boxes.forEach(box => {
+        console.log(box)
+        box.classList.value = "boxes"; // resets value of box to boxes (to re-set colors)
+        console.log(box)
+        p1Array.length = 0;
+        p2Array.length = 0;
+        player1Turn = true;
+    });
+}
 
-function checkWin(playerArray) {
-    for (let i = 0; i < winningCombinations.length; i++) {
-      let matchCount = 0;
-      for (let j = 0; j < winningCombinations[i].length; j++) {
-        if (playerArray.includes(winningCombinations[i][j])) {
-          matchCount++;
-        }
-      }
-      if (matchCount === 3) {
-        return true; // player has won
-      }
-    }
-    return false; // player has not won yet
-  }
-  
-  // Example usage:
-  if (checkWin(p1Array)) {
-    console.log("Player 1 has won!");
-  }
-  
+restartBtn.addEventListener("click", () => {
+    resetGame();
+})
 
 
-//restart button
-const restartBtn = document.getElementById("restartBtn");
-let boxes = document.querySelectorAll(".boxes"); // this gives back an array
-let player1Turn = true; // allows us to keep track of whose turn is who
+// function game() {
+
+//     // run for loop to compare array and winning combo 
+//     // compare during players turn
+        
+//     }
 
 boxes.forEach((box) => {
     box.addEventListener("click", (e) => {
