@@ -49,3 +49,10 @@ button {
     padding: 8px;
 
 }
+
+.game-status {
+    font-family: comic sans MS;
+    font-size: 15px;
+    text-align: center;
+    
+}
